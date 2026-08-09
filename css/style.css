@@ -256,6 +256,7 @@ ul{ list-style:none; margin:0; padding:0; }
   background:var(--bg); border-bottom:1px solid var(--line); overflow:hidden;
 }
 .project-media--logo img{ width:56%; }
+.project-media--cover img{ width:100%; height:100%; object-fit:cover; }
 .project-media--pending{ color:var(--fg-faint); font-size:13px; letter-spacing:.04em; }
 .project-copy{ padding:32px; }
 .project-copy h3{ font-family:var(--font-display); font-weight:500; font-size:1.6rem; margin:0 0 14px; }
