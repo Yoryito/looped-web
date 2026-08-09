@@ -275,9 +275,8 @@ ul{ list-style:none; margin:0; padding:0; }
   color:var(--fg); font-family:var(--font-sans); font-size:16px; padding:12px 0 10px;
   outline:none; transition:border-color .25s var(--ease); resize:none;
 }
-.field select{ appearance:none; cursor:pointer; }
 .field textarea{ padding-top:22px; }
-.field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--accent); }
+.field input:focus, .field textarea:focus{ border-color:var(--accent); }
 .field label{
   position:absolute; left:0; top:12px; color:var(--fg-faint); font-size:16px; pointer-events:none;
   transition:.2s var(--ease);
@@ -286,8 +285,42 @@ ul{ list-style:none; margin:0; padding:0; }
 .field textarea:focus + label, .field textarea:not(:placeholder-shown) + label{
   top:-14px; font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--accent);
 }
-.field .label-select{ top:-14px; font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-faint); }
+.field .label-select{ top:-14px; font-size:11.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--fg-faint); pointer-events:auto; }
+.field.select-focus .label-select{ color:var(--accent); }
 .form-note{ font-size:12px; color:var(--fg-faint); text-align:center; margin:2px 0 0; }
+
+/* custom select (native <select> kept for form semantics, hidden and overlaid) */
+.select-shell{ position:relative; }
+.select-native{
+  position:absolute; inset:0; width:100%; height:100%; margin:0; padding:0;
+  opacity:0; pointer-events:none; border:none; background:transparent; appearance:none;
+}
+.select-trigger{
+  width:100%; display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:transparent; border:none; border-bottom:1px solid var(--line);
+  color:var(--fg); font-family:var(--font-sans); font-size:16px; padding:12px 0 10px;
+  cursor:pointer; text-align:left; transition:border-color .25s var(--ease);
+}
+.select-trigger.open{ border-color:var(--accent); }
+.select-trigger-text{ min-height:1.2em; }
+.select-trigger-text:empty::before{ content:''; }
+.select-chevron{ color:var(--fg-faint); flex:none; transition:transform .25s var(--ease); }
+.select-trigger.open .select-chevron{ transform:rotate(180deg); color:var(--accent); }
+.select-panel{
+  position:absolute; left:0; right:0; top:calc(100% + 8px); z-index:20;
+  background:var(--bg-card); border:1px solid var(--line); border-radius:10px;
+  padding:6px; margin:0; list-style:none; max-height:280px; overflow-y:auto;
+  opacity:0; visibility:hidden; transform:translateY(-6px);
+  transition:opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+  box-shadow:0 20px 44px rgba(0,0,0,.5);
+}
+.select-panel.open{ opacity:1; visibility:visible; transform:translateY(0); }
+.select-panel li{
+  padding:11px 12px; border-radius:6px; font-size:14.5px; line-height:1.35;
+  color:var(--fg-dim); cursor:pointer; transition:background .18s var(--ease), color .18s var(--ease);
+}
+.select-panel li.active, .select-panel li:hover{ background:color-mix(in srgb, var(--accent) 16%, transparent); color:var(--fg); }
+.select-panel li.selected{ color:var(--accent); }
 
 /* sub-page hero (no photo) */
 .subhero{ padding:190px 0 70px; border-bottom:1px solid var(--line); }
