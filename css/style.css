@@ -64,15 +64,19 @@ ul{ list-style:none; margin:0; padding:0; }
 .site-header{
   position:fixed; top:0; left:0; right:0; z-index:100;
   padding:22px 0;
-  transition:padding .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
+  transition:padding .35s var(--ease), border-color .35s var(--ease);
   border-bottom:1px solid transparent;
+}
+.site-header::before{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:rgba(10,10,10,.72); backdrop-filter:blur(14px);
+  opacity:0; transition:opacity .35s var(--ease);
 }
 .site-header.scrolled{
   padding:14px 0;
-  background:rgba(10,10,10,.72);
-  backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
+.site-header.scrolled::before{ opacity:1; }
 .header-inner{ display:flex; align-items:center; justify-content:space-between; }
 .brand{ display:flex; align-items:center; gap:10px; }
 .brand-mark{ height:28px; width:auto; }
