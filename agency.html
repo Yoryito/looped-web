@@ -5,30 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Looped Agency | Booking y representación</title>
 <meta name="description" content="Looped Agency, representación y booking de artistas a nivel internacional. Gestión de contratos, salas, festivales y promotoras.">
+<meta name="theme-color" content="#080807">
+<link rel="icon" href="assets/img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
 <div class="grain"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <header class="site-header" id="siteHeader">
-  <div class="wrap header-inner">
-    <a href="index.html#top" class="brand">
+  <div class="wrap-wide header-inner">
+    <a href="index.html" class="brand">
       <img src="assets/img/logo-mark.png" alt="Looped" class="brand-mark">
       <span class="brand-word">LOOPED</span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#ecosistema">Servicios</a>
+      <a href="index.html#openair">Open Air</a>
       <a href="index.html#artistas">Artistas</a>
-      <a href="index.html#proyectos">Proyectos</a>
       <a href="nosotros.html">Nosotros</a>
-      <a href="index.html#contacto" class="nav-cta">Hablemos</a>
+      <a href="contacto.html" class="nav-cta"><span>Cuéntanos tu idea</span><span class="arrow">&rarr;</span></a>
     </nav>
-    <button class="burger" id="burger" aria-label="Abrir menú">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -36,10 +39,11 @@
 
 <main id="top">
 
-  <section class="section subhero">
+  <section class="subhero subhero--photo">
+    <div class="subhero-bg"><img src="assets/img/proyectos/kinetik.jpg" alt="" aria-hidden="true"></div>
     <div class="wrap">
-      <a href="index.html#servicios" class="subhero-back reveal">← Volver a Looped</a>
-      <p class="eyebrow reveal">Looped · División 01</p>
+      <a href="index.html#ecosistema" class="subhero-back reveal">← Volver a Looped</a>
+      <p class="section-label reveal">Looped · División 01</p>
       <h1 class="hero-title reveal" style="max-width:20ch;">Booking y representación.</h1>
       <p class="hero-sub reveal">Llevamos a nuestro roster a los escenarios y salas donde deben sonar, tanto dentro como fuera de España.</p>
     </div>
@@ -60,7 +64,7 @@
       </ul>
 
       <div class="division-actions reveal">
-        <a href="index.html#contacto" class="btn btn-primary"><span>Pedir booking</span></a>
+        <a href="contacto.html" class="btn btn-primary"><span>Pedir booking</span></a>
         <a href="index.html#artistas" class="btn btn-ghost"><span>Ver roster</span></a>
       </div>
     </div>
@@ -72,7 +76,7 @@
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <img src="assets/img/logo-blanco.png" alt="Looped">
-      <p>Productora independiente en Madrid.</p>
+      <p>Productora independiente en Madrid. Booking, producción, sonido, desarrollo y formación bajo un mismo sello.</p>
     </div>
     <div class="footer-cols">
       <div>
@@ -86,18 +90,22 @@
       <div>
         <h4>Looped</h4>
         <a href="nosotros.html">Nosotros</a>
+        <a href="index.html#openair">Open Air Series</a>
         <a href="index.html#artistas">Artistas</a>
-        <a href="index.html#proyectos">Proyectos</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="index.html#proyectos">Trabajo</a>
       </div>
       <div>
-        <h4>Social</h4>
+        <h4>Contacto</h4>
+        <a href="contacto.html">Formulario</a>
         <a href="mailto:loopedagency@jorgeaguileravillegas.com">Email</a>
+        <a href="tel:+34717778433">+34 71 777 84 33</a>
       </div>
     </div>
   </div>
-  <div class="wrap footer-bottom">
-    <p>© <span id="year"></span> Looped Agency. Todos los derechos reservados.</p>
+  <div class="footer-wordmark" aria-hidden="true"><p>LOOPED</p></div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Looped Agency. Todos los derechos reservados.</p>
+    <p>Madrid, España</p>
   </div>
 </footer>
 

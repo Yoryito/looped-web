@@ -4,31 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Looped | Producción sin límites de formato</title>
-<meta name="description" content="Looped es una productora de Madrid, agencia de artistas, estudio de producción audiovisual y sonido, librería sonora propia, desarrollo de webs y software, y formación. Todo bajo un mismo sello.">
+<meta name="description" content="Looped es una productora independiente de Madrid. Booking de artistas, producción audiovisual y de sonido, librerías propias, desarrollo de webs y software, y formación. Todo bajo un mismo sello.">
+<meta name="theme-color" content="#080807">
+<meta property="og:title" content="Looped | Producción sin límites de formato">
+<meta property="og:description" content="Productora independiente en Madrid. Booking, producción audiovisual y de sonido, desarrollo a medida y formación.">
+<meta property="og:image" content="assets/img/hero/hero-1.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero/hero-1.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<div class="preloader" id="preloader">
+  <img src="assets/img/logo-mark.png" alt="">
+  <div class="pre-bar"><span id="preBar"></span></div>
+  <p class="mono pre-count" id="preCount">00</p>
+</div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 <div class="grain"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <header class="site-header" id="siteHeader">
-  <div class="wrap header-inner">
+  <div class="wrap-wide header-inner">
     <a href="#top" class="brand">
       <img src="assets/img/logo-mark.png" alt="Looped" class="brand-mark">
       <span class="brand-word">LOOPED</span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="#servicios">Servicios</a>
+      <a href="#ecosistema">Servicios</a>
+      <a href="#openair">Open Air</a>
       <a href="#artistas">Artistas</a>
-      <a href="#proyectos">Proyectos</a>
       <a href="nosotros.html">Nosotros</a>
-      <a href="#contacto" class="nav-cta">Hablemos</a>
+      <a href="contacto.html" class="nav-cta"><span>Cuéntanos tu idea</span><span class="arrow">→</span></a>
     </nav>
-    <button class="burger" id="burger" aria-label="Abrir menú">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -36,147 +50,189 @@
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="assets/img/hero-openair.jpg" alt="Sesión de Open Air Series by Looped al atardecer">
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="wrap hero-content">
-      <p class="eyebrow reveal">Madrid · Productora independiente</p>
-      <h1 class="hero-title">
-        <span class="reveal reveal-1">Producción sin</span>
-        <span class="reveal reveal-2"><em>límites</em> de formato.</span>
-      </h1>
-      <p class="hero-sub reveal reveal-3">Agencia de artistas, estudio de sonido y evento, desarrollo propio y formación. Si hay que producirlo, lo producimos.</p>
-      <div class="hero-actions reveal reveal-4">
-        <a href="#contacto" class="btn btn-primary"><span>Pedir presupuesto</span></a>
-        <a href="#servicios" class="btn btn-ghost"><span>Ver qué hacemos</span></a>
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active" data-place="Cerro del Tío Pío" data-city="Madrid">
+        <img src="assets/img/hero/hero-1.jpg" alt="Sesión de Open Air Series al atardecer sobre el skyline de Madrid" fetchpriority="high">
+      </div>
+      <div class="hero-slide" data-place="Parque Juan Carlos I" data-city="Madrid">
+        <img src="assets/img/hero/hero-2.jpg" alt="Camiseta de Looped en primer plano durante un Open Air" loading="lazy">
+      </div>
+      <div class="hero-slide" data-place="Mirador Emperador Carlos V" data-city="Cáceres">
+        <img src="assets/img/hero/hero-3.jpg" alt="Cabina de DJ montada en un mirador al anochecer" loading="lazy">
+      </div>
+      <div class="hero-slide" data-place="KINETIK, La Tabacalera" data-city="Madrid">
+        <img src="assets/img/hero/hero-4.jpg" alt="Sesión en directo iluminada en rojo durante el evento KINETIK" loading="lazy">
+      </div>
+      <div class="hero-slide" data-place="Parque Juan Carlos I" data-city="Madrid">
+        <img src="assets/img/hero/hero-5.jpg" alt="Vista del skyline de Madrid desde un Open Air de Looped" loading="lazy">
       </div>
     </div>
-    <div class="scroll-cue">
-      <span></span>
-      <p>Scroll</p>
+    <div class="hero-overlay"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="wrap-wide hero-content">
+      <div class="hero-loop" id="heroLoop">
+        <svg class="loop-ring" viewBox="0 0 36 36" aria-hidden="true">
+          <circle class="bg" cx="18" cy="18" r="15.5"></circle>
+          <circle class="fg" cx="18" cy="18" r="15.5"></circle>
+        </svg>
+        <span class="mono label">En bucle</span>
+        <span class="mono idx"><b id="loopIdx">01</b><span class="sep"> / 05</span></span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line"><span>Producción</span></span>
+        <span class="line"><span>sin <em>límites</em></span></span>
+        <span class="line"><span>de formato.</span></span>
+      </h1>
+      <p class="hero-sub">Somos la productora independiente que te lleva del artista al escenario, del guion al máster y de la idea al software. Cinco divisiones, un mismo equipo, en Madrid.</p>
+      <div class="hero-actions">
+        <a href="contacto.html" class="btn btn-primary"><span>Cuéntanos tu idea</span><span class="arrow">→</span></a>
+        <a href="#ecosistema" class="btn btn-ghost"><span>Ver qué hacemos</span></a>
+      </div>
+    </div>
+
+    <div class="wrap-wide hero-foot">
+      <div class="hero-caption">
+        <span class="mono">En pantalla</span>
+        <strong id="heroCaption">Cerro del Tío Pío, Madrid</strong>
+      </div>
+      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Cambiar imagen"></div>
+      <div class="scroll-cue"><span></span><p>Scroll</p></div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee">
+  <!-- ==================== MARQUEE ==================== -->
+  <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>BOOKING</span><span>·</span><span>PRODUCCIÓN AUDIOVISUAL</span><span>·</span>
-      <span>BANDAS SONORAS</span><span>·</span><span>SOUND DESIGN</span><span>·</span>
-      <span>WEBS &amp; SOFTWARE</span><span>·</span><span>FORMACIÓN</span><span>·</span>
-      <span>BOOKING</span><span>·</span><span>PRODUCCIÓN AUDIOVISUAL</span><span>·</span>
-      <span>BANDAS SONORAS</span><span>·</span><span>SOUND DESIGN</span><span>·</span>
-      <span>WEBS &amp; SOFTWARE</span><span>·</span><span>FORMACIÓN</span><span>·</span>
-      <span>BOOKING</span><span>·</span><span>PRODUCCIÓN AUDIOVISUAL</span><span>·</span>
-      <span>BANDAS SONORAS</span><span>·</span><span>SOUND DESIGN</span><span>·</span>
-      <span>WEBS &amp; SOFTWARE</span><span>·</span><span>FORMACIÓN</span><span>·</span>
-      <span>BOOKING</span><span>·</span><span>PRODUCCIÓN AUDIOVISUAL</span><span>·</span>
-      <span>BANDAS SONORAS</span><span>·</span><span>SOUND DESIGN</span><span>·</span>
-      <span>WEBS &amp; SOFTWARE</span><span>·</span><span>FORMACIÓN</span><span>·</span>
+      <span>BOOKING</span><span class="dot">·</span><span class="soft">eventos</span><span class="dot">·</span>
+      <span>PRODUCCIÓN AUDIOVISUAL</span><span class="dot">·</span><span class="soft">sonido</span><span class="dot">·</span>
+      <span>BANDAS SONORAS</span><span class="dot">·</span><span class="soft">librerías</span><span class="dot">·</span>
+      <span>WEBS &amp; SOFTWARE</span><span class="dot">·</span><span class="soft">formación</span><span class="dot">·</span>
+      <span>BOOKING</span><span class="dot">·</span><span class="soft">eventos</span><span class="dot">·</span>
+      <span>PRODUCCIÓN AUDIOVISUAL</span><span class="dot">·</span><span class="soft">sonido</span><span class="dot">·</span>
+      <span>BANDAS SONORAS</span><span class="dot">·</span><span class="soft">librerías</span><span class="dot">·</span>
+      <span>WEBS &amp; SOFTWARE</span><span class="dot">·</span><span class="soft">formación</span><span class="dot">·</span>
+      <span>BOOKING</span><span class="dot">·</span><span class="soft">eventos</span><span class="dot">·</span>
+      <span>PRODUCCIÓN AUDIOVISUAL</span><span class="dot">·</span><span class="soft">sonido</span><span class="dot">·</span>
+      <span>BANDAS SONORAS</span><span class="dot">·</span><span class="soft">librerías</span><span class="dot">·</span>
+      <span>WEBS &amp; SOFTWARE</span><span class="dot">·</span><span class="soft">formación</span><span class="dot">·</span>
+      <span>BOOKING</span><span class="dot">·</span><span class="soft">eventos</span><span class="dot">·</span>
+      <span>PRODUCCIÓN AUDIOVISUAL</span><span class="dot">·</span><span class="soft">sonido</span><span class="dot">·</span>
+      <span>BANDAS SONORAS</span><span class="dot">·</span><span class="soft">librerías</span><span class="dot">·</span>
+      <span>WEBS &amp; SOFTWARE</span><span class="dot">·</span><span class="soft">formación</span><span class="dot">·</span>
     </div>
   </div>
 
-  <!-- NOSOTROS / MANIFESTO -->
-  <section class="section manifesto" id="nosotros">
+  <!-- ==================== MANIFIESTO ==================== -->
+  <section class="section" id="nosotros">
     <div class="wrap">
       <div class="manifesto-grid">
         <p class="section-label reveal">Quiénes somos</p>
-        <h2 class="manifesto-text reveal">
+        <h2 class="manifesto-text reveal reveal-1">
           Looped nació en Madrid como una productora inquieta. Hoy somos una agencia
-          <strong>multidisciplinar</strong>, llevamos artistas a los escenarios, montamos eventos,
-          grabamos y mezclamos su sonido, y te ayudamos a dar forma a tus <strong>ideas</strong>.
+          <strong>multidisciplinar</strong> que lleva artistas a los escenarios, monta eventos,
+          graba y mezcla su sonido, y te ayuda a dar forma a tus <em>ideas</em>.
         </h2>
-        <p class="manifesto-credential reveal">
-          Mucha experiencia en <strong>Producción y Sonido</strong>, estudios de <strong>Máster</strong>
-          y años trabajando en el sector, es lo que hay detrás de cada proyecto que sale de Looped.
+        <p class="manifesto-credential reveal reveal-2">
+          Más de <strong>tres años</strong> con el sello en marcha y más de <strong>cinco</strong>
+          montando eventos, con estudios de <strong>Máster</strong> en Producción y Sonido y años
+          trabajando en el sector, es lo que hay detrás de cada proyecto que sale de Looped.
         </p>
-        <a href="nosotros.html" class="btn btn-ghost btn-small reveal" style="margin-top:28px;"><span>Conoce al equipo ↗</span></a>
+        <div class="hero-actions reveal reveal-3" style="margin-top:32px;">
+          <a href="nosotros.html" class="btn btn-ghost btn-small"><span>Conoce al equipo</span><span class="arrow">→</span></a>
+        </div>
       </div>
+
       <div class="stats-row">
         <div class="stat reveal">
-          <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
-          <p>artistas representados</p>
+          <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+          <p>años con el sello en marcha</p>
         </div>
-        <div class="stat reveal">
-          <span class="stat-number" data-count="5">0</span>
-          <p>divisiones bajo un mismo sello</p>
+        <div class="stat reveal reveal-1">
+          <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+          <p>años produciendo eventos</p>
         </div>
-        <div class="stat reveal">
+        <div class="stat reveal reveal-2">
           <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
           <p>ediciones de Open Air Series</p>
         </div>
-        <div class="stat reveal">
-          <span class="stat-number" data-count="1">0</span>
-          <p>sede en Madrid</p>
+        <div class="stat reveal reveal-3">
+          <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+          <p>artistas representados</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS / ECOSISTEMA -->
-  <section class="section services" id="servicios">
+  <!-- ==================== ECOSISTEMA ==================== -->
+  <section class="section" id="ecosistema">
     <div class="wrap">
-      <p class="section-label reveal">El ecosistema Looped</p>
-      <h2 class="section-title reveal">Cinco maneras de trabajar con nosotros.</h2>
+      <div class="section-head">
+        <div>
+          <p class="section-label reveal">El ecosistema Looped</p>
+          <h2 class="section-title reveal reveal-1">Cinco maneras<br>de <em>trabajar</em> juntos.</h2>
+        </div>
+        <p class="section-intro reveal reveal-2">Si tu proyecto necesita más de una división, no pasa nada. Se cruzan entre ellas y lo cubrimos todo con el mismo equipo.</p>
+      </div>
 
       <div class="services-grid">
 
-        <a href="agency.html" class="service-card reveal">
+        <a href="agency.html" class="service-card reveal" data-media="assets/img/proyectos/kinetik.jpg">
           <div class="service-head">
-            <span class="service-index">01</span>
-            <h3>Looped Agency</h3>
+            <span class="service-index">01 / Agency</span>
+            <h3>Looped Agency<small>Booking y representación</small></h3>
           </div>
-          <p>Representación y booking de artistas a nivel internacional. Llevamos a nuestro roster a los escenarios y salas donde debe sonar.</p>
+          <p>Representamos artistas y los llevamos a los escenarios y salas donde tienen que sonar, dentro y fuera de España.</p>
           <div class="service-foot">
             <span class="service-tag">Booking mundial</span>
             <span class="service-more">Saber más ↗</span>
           </div>
         </a>
 
-        <a href="studios.html" class="service-card reveal service-card--wide">
+        <a href="studios.html" class="service-card service-card--wide reveal reveal-1" data-media="assets/img/proyectos/pulse.jpg">
           <div class="service-head">
-            <span class="service-index">02</span>
-            <h3>Looped Studios</h3>
+            <span class="service-index">02 / Studios</span>
+            <h3>Looped Studios<small>Producción de eventos y sonido</small></h3>
           </div>
-          <p>El estudio de producción integral, con sonido y evento bajo el mismo techo. Podcast, radio, pre y post-producción, rodajes, presupuestos, festivales y bolos, además de composición de bandas sonoras y sintonías a medida.</p>
+          <p>El estudio de producción integral, con sonido y evento bajo el mismo techo. Podcast, radio, pre y post-producción, rodajes, festivales y bolos, además de composición de bandas sonoras y sintonías a medida.</p>
           <div class="service-foot">
             <span class="service-tag">Producción &amp; sonido</span>
             <span class="service-more">Saber más ↗</span>
           </div>
         </a>
 
-        <a href="soundworks.html" class="service-card reveal">
+        <a href="soundworks.html" class="service-card reveal reveal-2" data-media="assets/img/paisajes/sierra.jpg">
           <div class="service-head">
-            <span class="service-index">03</span>
-            <h3>Looped Soundworks</h3>
+            <span class="service-index">03 / Soundworks</span>
+            <h3>Looped Soundworks<small>Nuestro propio sonido</small></h3>
           </div>
-          <p>Librerías de sonido propias y productos sonoros listos para usar, con samples, kits y recursos pensados para productores.</p>
+          <p>Librerías de sonido propias y productos sonoros listos para usar, grabados por el equipo y pensados para uso comercial.</p>
           <div class="service-foot">
             <span class="service-tag">Sound library</span>
             <span class="service-more">Saber más ↗</span>
           </div>
         </a>
 
-        <a href="labs.html" class="service-card reveal">
+        <a href="labs.html" class="service-card reveal reveal-3" data-media="assets/img/paisajes/mirador.jpg">
           <div class="service-head">
-            <span class="service-index">04</span>
-            <h3>Looped Labs</h3>
+            <span class="service-index">04 / Labs</span>
+            <h3>Looped Labs<small>Webs, software y apps</small></h3>
           </div>
-          <p>Desarrollo de webs, software y apps a medida, además de nuestros propios juegos y proyectos digitales. El software que necesita una productora moderna.</p>
+          <p>Desarrollo de webs a medida, software de gestión, automatización de procesos y nuestros propios juegos y proyectos digitales.</p>
           <div class="service-foot">
             <span class="service-tag">Webs &amp; software</span>
             <span class="service-more">Saber más ↗</span>
           </div>
         </a>
 
-        <a href="academy.html" class="service-card reveal">
+        <a href="academy.html" class="service-card reveal reveal-4" data-media="assets/img/paisajes/skyline.jpg">
           <div class="service-head">
-            <span class="service-index">05</span>
-            <h3>Looped Academy</h3>
+            <span class="service-index">05 / Academy</span>
+            <h3>Looped Academy<small>Formación en sonido</small></h3>
           </div>
-          <p>Formación en sonido y producción, con tutoriales, procesos reales y apuntes gratuitos y de pago, para quienes quieren pasar de escuchar a crear.</p>
+          <p>Formación en sonido y producción con tutoriales, procesos reales y apuntes gratuitos y de pago, para pasar de escuchar a crear.</p>
           <div class="service-foot">
             <span class="service-tag">Formación</span>
             <span class="service-more">Saber más ↗</span>
@@ -187,95 +243,364 @@
     </div>
   </section>
 
-  <!-- ARTISTAS -->
-  <section class="section artists" id="artistas">
+  <!-- ==================== OPEN AIR SERIES ==================== -->
+  <section class="section oa" id="openair">
     <div class="wrap">
-      <p class="section-label reveal">Roster</p>
-      <h2 class="section-title reveal">Artistas que representamos.</h2>
-    </div>
+      <div class="section-head">
+        <div>
+          <p class="section-label reveal">Proyecto propio</p>
+          <img src="assets/img/openair-logo.png" alt="Open Air Series by Looped" class="oa-logo reveal reveal-1" loading="lazy">
+          <h2 class="section-title reveal reveal-1">Open Air <em>Series</em>.</h2>
+        </div>
+        <p class="section-intro reveal reveal-2">Nuestro sello de contenido en directo. Cabina montada al aire libre, la mejor luz del día y una sesión grabada en el sitio menos previsible de cada ciudad. Más de diez ediciones y las que vienen.</p>
+      </div>
 
-    <div class="artists-rail reveal">
-      <div class="artist-card">
-        <div class="artist-photo"><img src="assets/img/artistas/notrave.jpg" alt="Alexander NotRave" loading="lazy"></div>
-        <h3>Alexander NotRave</h3>
-        <p>DJ &amp; producer</p>
-      </div>
-      <div class="artist-card">
-        <div class="artist-photo"><img src="assets/img/artistas/djcruse.jpg" alt="DJ Cruse" loading="lazy"></div>
-        <h3>DJ Cruse</h3>
-        <p>DJ &amp; producer</p>
-      </div>
-      <div class="artist-card">
-        <div class="artist-photo"><img src="assets/img/artistas/mico.jpg" alt="MICO" loading="lazy"></div>
-        <h3>MICO</h3>
-        <p>DJ &amp; producer</p>
-      </div>
-      <div class="artist-card">
-        <div class="artist-photo"><img src="assets/img/artistas/vasishth.jpg" alt="Vasishth" loading="lazy"></div>
-        <h3>Vasishth</h3>
-        <p>DJ &amp; producer</p>
-      </div>
-      <div class="artist-card">
-        <div class="artist-photo"><img src="assets/img/artistas/angelofe.jpg" alt="Ángelo Fe" loading="lazy"></div>
-        <h3>Ángelo Fe</h3>
-        <p>DJ &amp; producer</p>
+      <div class="oa-body">
+        <div class="oa-list-wrap reveal">
+          <div class="oa-list" id="oaList">
+            <button class="oa-item on" type="button" data-img="assets/img/openair/tiopio.jpg" data-place="Cerro del Tío Pío" data-city="Madrid">
+              <span class="oa-num">01</span>
+              <span class="oa-place"><b>Cerro del Tío Pío</b><span>Madrid</span></span>
+              <span class="oa-date">03.07.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/trescantos.jpg" data-place="Lago de Tres Cantos" data-city="Madrid">
+              <span class="oa-num">02</span>
+              <span class="oa-place"><b>Lago de Tres Cantos</b><span>Madrid</span></span>
+              <span class="oa-date">10.07.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/castro.jpg" data-place="Playa de Brazomar" data-city="Castro Urdiales">
+              <span class="oa-num">03</span>
+              <span class="oa-place"><b>Playa de Brazomar</b><span>Castro Urdiales, Cantabria</span></span>
+              <span class="oa-date">17.07.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/riojerte.jpg" data-place="Río Jerte" data-city="Navaconcejo">
+              <span class="oa-num">04</span>
+              <span class="oa-place"><b>Río Jerte</b><span>Navaconcejo, Cáceres</span></span>
+              <span class="oa-date">02.09.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/caceres.jpg" data-place="Mirador Emperador Carlos V" data-city="Cáceres">
+              <span class="oa-num">05</span>
+              <span class="oa-place"><b>Mirador Emperador Carlos V</b><span>Cáceres</span></span>
+              <span class="oa-date">03.09.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/parqueeuropa.jpg" data-place="Parque Europa" data-city="Torrejón de Ardoz">
+              <span class="oa-num">06</span>
+              <span class="oa-place"><b>Parque Europa</b><span>Torrejón de Ardoz, Madrid</span></span>
+              <span class="oa-date">12.09.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/mejorada.jpg" data-place="Catedral de Justo" data-city="Mejorada del Campo">
+              <span class="oa-num">07</span>
+              <span class="oa-place"><b>Catedral de Justo</b><span>Mejorada del Campo, Madrid</span></span>
+              <span class="oa-date">10.10.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/retiro.jpg" data-place="Parque del Retiro" data-city="Madrid">
+              <span class="oa-num">08</span>
+              <span class="oa-place"><b>Parque del Retiro</b><span>Madrid</span></span>
+              <span class="oa-date">27.10.2024</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/juancarlos.jpg" data-place="Parque Juan Carlos I" data-city="Madrid">
+              <span class="oa-num">09</span>
+              <span class="oa-place"><b>Parque Juan Carlos I</b><span>Madrid</span></span>
+              <span class="oa-date">28.06.2025</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/cabra.jpg" data-place="Mirador de la Cabra" data-city="Cáceres">
+              <span class="oa-num">10</span>
+              <span class="oa-place"><b>Mirador de la Cabra</b><span>Cáceres</span></span>
+              <span class="oa-date">09.2025</span>
+            </button>
+            <button class="oa-item" type="button" data-img="assets/img/openair/cordoba.jpg" data-place="Parque de la Asomadilla" data-city="Córdoba">
+              <span class="oa-num">11</span>
+              <span class="oa-place"><b>Parque de la Asomadilla</b><span>Córdoba</span></span>
+              <span class="oa-date">2025</span>
+            </button>
+          </div>
+
+          <p class="oa-note">Hoy lo hacemos con We Are MadBoys y queremos abrirlo a más DJs y colaboradores. El concepto Rooftop está en marcha, buscando ubicación.</p>
+
+          <div class="oa-aside">
+            <a href="https://www.youtube.com/@WeAreMadBoys/videos" target="_blank" rel="noopener" class="btn btn-primary btn-small"><span>Ver las sesiones</span><span class="arrow">↗</span></a>
+            <a href="contacto.html" class="btn btn-ghost btn-small"><span>Quiero pinchar en uno</span></a>
+          </div>
+        </div>
+
+        <div class="oa-stage reveal reveal-1" id="oaStage">
+          <img src="assets/img/openair/tiopio.jpg" alt="Open Air Series en el Cerro del Tío Pío, Madrid" class="on">
+          <div class="oa-stage-grad"></div>
+          <div class="oa-stage-meta">
+            <h4 id="oaPlace">Cerro del Tío Pío</h4>
+            <span class="mono" id="oaCity">Madrid</span>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="artists-note reveal">+ Gabriele D'Ascoli, Spark, Steve Marks, Vincent y más. Roster completo bajo petición.</p>
   </section>
 
-  <!-- PROYECTOS -->
-  <section class="section projects" id="proyectos">
-    <div class="wrap">
-      <p class="section-label reveal">Proyectos</p>
-      <h2 class="section-title reveal">Looped Studios, en la práctica.</h2>
+  <!-- ==================== TIRA DE FOTOS ==================== -->
+  <section class="strip section-tight" aria-label="Galería de eventos de Looped">
+    <div class="wrap" style="margin-bottom:38px;">
+      <p class="section-label reveal">Archivo</p>
+      <h2 class="section-title reveal reveal-1">Así se ve<br>una noche <em>nuestra</em>.</h2>
     </div>
-    <div class="wrap projects-grid">
-
-      <article class="project-card reveal">
-        <div class="project-media project-media--logo">
-          <img src="assets/img/openair-logo.png" alt="Open Air Series by Looped">
-        </div>
-        <div class="project-copy">
-          <h3>Open Air Series</h3>
-          <p>Nuestro sello de contenido en directo, con sesiones de DJ grabadas al aire libre con vistas a Madrid. Hoy con We Are MadBoys, con la idea de abrir hueco a más colaboradores. El concepto Rooftop, en desarrollo.</p>
-          <a href="https://www.youtube.com/@WeAreMadBoys/videos" target="_blank" rel="noopener" class="btn btn-ghost btn-small"><span>Ver vídeos del evento</span></a>
-        </div>
-      </article>
-
-      <article class="project-card reveal">
-        <div class="project-media project-media--cover">
-          <img src="assets/img/bumbaloop-logo.png" alt="Bumbaloop">
-        </div>
-        <div class="project-copy">
-          <h3>Bumbaloop</h3>
-          <p>Colaboramos en la organización de Bumbaloop, festival que se celebra desde hace varias ediciones en Mejorada del Campo.</p>
-        </div>
-      </article>
-
+    <div class="strip-row a">
+      <figure><img src="assets/img/galeria/g-01.jpg" alt="Público bailando en el evento KINETIK" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-02.jpg" alt="DJ al atardecer en un Open Air en Madrid" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-03.jpg" alt="DJ en cabina con luz roja durante KINETIK" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-04.jpg" alt="Cabina de MadBoys en el evento PULSE" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-05.jpg" alt="Cabina montada al atardecer en un Open Air" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-06.jpg" alt="Proyección y sesión en directo iluminada en rojo" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-01.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-02.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-03.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-04.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-05.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-06.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+    </div>
+    <div class="strip-row b">
+      <figure><img src="assets/img/galeria/g-07.jpg" alt="DJ mezclando en Parque Europa" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-08.jpg" alt="Sesión nocturna en el mirador de Cáceres" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-09.jpg" alt="Neón en la sala del evento PULSE" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-10.jpg" alt="DJ con el skyline de Madrid al anochecer" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-11.jpg" alt="Público y proyección durante KINETIK" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-12.jpg" alt="Cabina en El Hoyo del Queque durante PULSE" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-07.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-08.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-09.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-10.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-11.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
+      <figure><img src="assets/img/galeria/g-12.jpg" alt="" aria-hidden="true" loading="lazy"></figure>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="section contact" id="contacto">
+  <!-- ==================== EVENTOS / PROYECTOS ==================== -->
+  <section class="section" id="proyectos">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-label reveal">Trabajo</p>
+          <h2 class="section-title reveal reveal-1">Últimos <em>montajes</em>.</h2>
+        </div>
+        <p class="section-intro reveal reveal-2">Eventos propios y colaboraciones donde Looped Studios se encarga de la producción, el sonido y el contenido.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal">
+          <div class="project-media">
+            <span class="project-badge">Studios · 2024</span>
+            <img src="assets/img/proyectos/kinetik.jpg" alt="Evento KINETIK en La Tabacalera, Madrid" loading="lazy">
+          </div>
+          <div class="project-copy">
+            <h3>KINETIK</h3>
+            <p>Sesión en La Tabacalera de Madrid, con producción de cabina, iluminación y cobertura fotográfica del evento completo.</p>
+            <a href="studios.html" class="btn btn-ghost btn-small"><span>Cómo lo montamos</span><span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-1">
+          <div class="project-media">
+            <span class="project-badge">Studios · 2023</span>
+            <img src="assets/img/proyectos/pulse.jpg" alt="Sesión PULSE en El Hoyo del Queque, Madrid" loading="lazy">
+          </div>
+          <div class="project-copy">
+            <h3>PULSE</h3>
+            <p>Noche en El Hoyo del Queque con Ángelo Fe, UNKNWN, PXL y MadBoys, con montaje técnico y grabación a cargo del equipo.</p>
+            <a href="studios.html" class="btn btn-ghost btn-small"><span>Cómo lo montamos</span><span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-2">
+          <div class="project-media project-media--logo">
+            <span class="project-badge">Colaboración</span>
+            <img src="assets/img/bumbaloop-logo.png" alt="Bumbaloop" loading="lazy">
+          </div>
+          <div class="project-copy">
+            <h3>Bumbaloop</h3>
+            <p>Colaboramos en la organización de Bumbaloop, el festival que se celebra desde hace varias ediciones en Mejorada del Campo.</p>
+            <a href="contacto.html" class="btn btn-ghost btn-small"><span>Hablar de un festival</span><span class="arrow">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ARTISTAS (carrusel anclado al scroll) ==================== -->
+  <section class="pin" id="artistas">
+    <div class="pin-sticky">
+      <div class="wrap">
+        <div class="pin-head">
+          <div>
+            <p class="section-label">Roster</p>
+            <h2 class="section-title">Artistas que <em>representamos</em>.</h2>
+          </div>
+          <p class="section-intro">Booking, gestión de fechas y acompañamiento en cada bolo. Si buscas cabeza de cartel o telonero, escríbenos y te pasamos disponibilidad.</p>
+        </div>
+      </div>
+
+      <div class="pin-rail" id="pinRail">
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/artistas/notrave.jpg" alt="Alexander NotRave" loading="lazy"></div>
+          <h3>Alexander NotRave</h3>
+          <p>DJ &amp; producer</p>
+        </div>
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/artistas/djcruse.jpg" alt="DJ Cruse" loading="lazy"></div>
+          <h3>DJ Cruse</h3>
+          <p>DJ &amp; producer</p>
+        </div>
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/artistas/mico.jpg" alt="MICO" loading="lazy"></div>
+          <h3>MICO</h3>
+          <p>DJ &amp; producer</p>
+        </div>
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/artistas/vasishth.jpg" alt="Vasishth" loading="lazy"></div>
+          <h3>Vasishth</h3>
+          <p>DJ &amp; producer</p>
+        </div>
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/artistas/angelofe.jpg" alt="Ángelo Fe" loading="lazy"></div>
+          <h3>Ángelo Fe</h3>
+          <p>DJ &amp; producer</p>
+        </div>
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/fundadores/darkyo.jpg" alt="Darkyo" loading="lazy"></div>
+          <h3>Darkyo</h3>
+          <p>DJ &amp; producer</p>
+        </div>
+        <div class="artist-card">
+          <div class="artist-photo"><img src="assets/img/fundadores/wearemadboys.jpg" alt="We Are MadBoys" loading="lazy"></div>
+          <h3>We Are MadBoys</h3>
+          <p>DJ duo</p>
+        </div>
+        <a href="contacto.html" class="artist-cta">
+          <h3>+ Gabriele D'Ascoli, Spark, Steve Marks, Vincent</h3>
+          <span>El roster completo va bajo petición.</span>
+          <span class="go">Pedir disponibilidad →</span>
+        </a>
+      </div>
+
+      <div class="wrap">
+        <div class="pin-progress" id="pinProgress" aria-hidden="true"><i></i></div>
+        <div class="pin-hint" style="margin-top:14px;"><span class="bar"></span><span id="pinHint">Sigue bajando para recorrer el roster</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROCESO ==================== -->
+  <section class="section" id="proceso">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-label reveal">Proceso</p>
+          <h2 class="section-title reveal reveal-1">Cómo <em>trabajamos</em>.</h2>
+        </div>
+        <p class="section-intro reveal reveal-2">Lo tratamos como una sesión de estudio, con su línea de tiempo y su cabezal. Baja y verás pasar el proyecto de la primera llamada a la entrega final.</p>
+      </div>
+
+      <div class="daw reveal" id="daw">
+        <div class="daw-ruler" id="dawRuler" aria-hidden="true">
+          <span>Escucha</span>
+          <span>Propuesta</span>
+          <span>Producción</span>
+          <span>Entrega</span>
+          <span class="solo">Línea de sesión</span>
+        </div>
+
+        <div class="daw-track" id="dawTrack">
+          <div class="daw-playhead" id="dawPlayhead" aria-hidden="true"></div>
+
+          <article class="daw-clip">
+            <div class="daw-wave" data-seed="7" aria-hidden="true"></div>
+            <div class="daw-body">
+              <span class="mono">01 · Escucha</span>
+              <h3>Nos lo cuentas</h3>
+              <p>Primera llamada o reunión para entender el proyecto, la fecha y el presupuesto con el que juegas.</p>
+              <span class="daw-meta">Gratuita · 24 a 48 h</span>
+            </div>
+          </article>
+
+          <article class="daw-clip">
+            <div class="daw-wave" data-seed="19" aria-hidden="true"></div>
+            <div class="daw-body">
+              <span class="mono">02 · Propuesta</span>
+              <h3>Te lo ponemos por escrito</h3>
+              <p>Plan de producción, equipo necesario y presupuesto cerrado. Todo documentado antes de mover un cable.</p>
+              <span class="daw-meta">1 a 3 días</span>
+            </div>
+          </article>
+
+          <article class="daw-clip">
+            <div class="daw-wave" data-seed="41" aria-hidden="true"></div>
+            <div class="daw-body">
+              <span class="mono">03 · Producción</span>
+              <h3>Lo montamos</h3>
+              <p>Equipo propio de sonido, cabina, cámara y luz. Nos encargamos del montaje, del directo y del desmontaje.</p>
+              <span class="daw-meta">Según proyecto</span>
+            </div>
+          </article>
+
+          <article class="daw-clip">
+            <div class="daw-wave" data-seed="63" aria-hidden="true"></div>
+            <div class="daw-body">
+              <span class="mono">04 · Entrega</span>
+              <h3>Te lo damos listo</h3>
+              <p>Post-producción, mezcla y máster. Entregamos en los formatos que necesites para redes, radio o cine.</p>
+              <span class="daw-meta">2 rondas de revisión</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="daw-foot">
+          <span>Pista 01 · Tu proyecto</span>
+          <span>Cabezal en <span class="now" id="dawNow">Escucha</span></span>
+          <span id="dawPct">00 %</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA + CONTACTO ==================== -->
+  <section class="cta-band" id="hablemos">
+    <div class="cta-band-bg"><img src="assets/img/hero/hero-1.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+    <div class="wrap">
+      <h2 class="reveal">Cuéntanos<br>tu <em>idea</em>.</h2>
+      <p class="reveal reveal-1">Un evento, un artista, un disco, una web o una clase. Escríbenos con dos líneas y te respondemos en menos de 48 horas con una propuesta clara.</p>
+      <div class="hero-actions reveal reveal-2">
+        <a href="contacto.html" class="btn btn-primary"><span>Abrir formulario</span><span class="arrow">→</span></a>
+        <a href="mailto:loopedagency@jorgeaguileravillegas.com" class="btn btn-ghost"><span>Escribir un email</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacto">
     <div class="wrap contact-inner">
       <div class="contact-copy reveal">
         <p class="section-label">Hablemos</p>
-        <h2 class="section-title">¿Tienes un evento, un artista o un proyecto en mente?</h2>
-        <p>Cuéntanos qué necesitas y te respondemos en menos de 48h.</p>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3.6vw,2.9rem);margin-bottom:22px;">Directo, sin intermediarios.</h2>
+        <p>Detrás de este formulario estamos nosotros, no un call center. Cuanto más concreto seas, mejor te podemos responder.</p>
         <ul class="contact-list">
-          <li><a href="mailto:loopedagency@jorgeaguileravillegas.com">loopedagency@jorgeaguileravillegas.com</a></li>
-          <li><a href="tel:+34717778433">+34 71 777 84 33</a></li>
+          <li><a href="mailto:loopedagency@jorgeaguileravillegas.com"><span>loopedagency@jorgeaguileravillegas.com</span><span class="mono">Email</span></a></li>
+          <li><a href="tel:+34717778433"><span>+34 71 777 84 33</span><span class="mono">Teléfono</span></a></li>
+          <li><span class="contact-static"><span>Madrid, España</span><span class="mono">Base</span></span></li>
         </ul>
-      </div>
-      <form class="contact-form reveal" id="contactForm">
-        <div class="field">
-          <input type="text" name="nombre" id="f-nombre" required placeholder=" ">
-          <label for="f-nombre">Nombre</label>
+        <div class="contact-badges">
+          <span class="badge"><span class="dot">●</span> Respuesta en 48 h</span>
+          <span class="badge">Presupuesto sin compromiso</span>
+          <span class="badge">Trabajamos fuera de Madrid</span>
         </div>
-        <div class="field">
-          <input type="email" name="email" id="f-email" required placeholder=" ">
-          <label for="f-email">Email</label>
+      </div>
+
+      <form class="contact-form reveal reveal-1" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <input type="text" name="nombre" id="f-nombre" required placeholder=" " autocomplete="name">
+            <label for="f-nombre">Nombre</label>
+          </div>
+          <div class="field">
+            <input type="email" name="email" id="f-email" required placeholder=" " autocomplete="email">
+            <label for="f-email">Email</label>
+          </div>
         </div>
         <div class="field">
           <select name="motivo" id="f-motivo" required>
@@ -284,6 +609,7 @@
             <option>Contratar Looped para un evento (DJ / producción)</option>
             <option>Encargo audiovisual (Studios)</option>
             <option>Producto de Soundworks</option>
+            <option>Web, software o app (Labs)</option>
             <option>Looped Academy</option>
             <option>Colaborar como DJ/artista en Open Air Series</option>
             <option>Otro</option>
@@ -291,10 +617,17 @@
           <label for="f-motivo" class="label-select">Motivo</label>
         </div>
         <div class="field">
-          <textarea name="mensaje" id="f-mensaje" required placeholder=" " rows="4"></textarea>
+          <textarea name="mensaje" id="f-mensaje" required placeholder=" " rows="4" maxlength="600"></textarea>
           <label for="f-mensaje">Cuéntanos</label>
+          <span class="char-count" id="charCount">0 / 600</span>
         </div>
-        <button type="submit" class="btn btn-primary btn-full"><span>Enviar mensaje</span></button>
+        <label class="check">
+          <input type="checkbox" name="privacidad" id="f-privacidad" required>
+          <span class="box"></span>
+          <small>He leído y acepto que Looped use estos datos para responderme. Nada más.</small>
+        </label>
+        <button type="submit" class="btn btn-primary btn-full"><span>Enviar mensaje</span><span class="arrow">→</span></button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         <p class="form-note">Formulario de demostración, pendiente de conectar a un servicio de envío antes de publicar.</p>
       </form>
     </div>
@@ -306,7 +639,7 @@
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <img src="assets/img/logo-blanco.png" alt="Looped">
-      <p>Productora independiente en Madrid.</p>
+      <p>Productora independiente en Madrid. Booking, producción, sonido, desarrollo y formación bajo un mismo sello.</p>
     </div>
     <div class="footer-cols">
       <div>
@@ -320,18 +653,22 @@
       <div>
         <h4>Looped</h4>
         <a href="nosotros.html">Nosotros</a>
-        <a href="#artistas">Artistas</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="index.html#openair">Open Air Series</a>
+        <a href="index.html#artistas">Artistas</a>
+        <a href="index.html#proyectos">Trabajo</a>
       </div>
       <div>
-        <h4>Social</h4>
+        <h4>Contacto</h4>
+        <a href="contacto.html">Formulario</a>
         <a href="mailto:loopedagency@jorgeaguileravillegas.com">Email</a>
+        <a href="tel:+34717778433">+34 71 777 84 33</a>
       </div>
     </div>
   </div>
-  <div class="wrap footer-bottom">
+  <div class="footer-wordmark" aria-hidden="true"><p>LOOPED</p></div>
+  <div class="footer-bottom">
     <p>© <span id="year"></span> Looped Agency. Todos los derechos reservados.</p>
+    <p>Madrid, España</p>
   </div>
 </footer>
 

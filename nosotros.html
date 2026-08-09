@@ -4,121 +4,306 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nosotros | Looped</title>
-<meta name="description" content="El equipo detrás de Looped, productora independiente de Madrid. Formación real en producción y sonido, y años de experiencia en el sector.">
+<meta name="description" content="El equipo de Looped. Cinco personas en Madrid que producen eventos, sonido, contenido y software bajo un mismo sello.">
+<meta name="theme-color" content="#080807">
+<link rel="icon" href="assets/img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<div class="scroll-progress" id="scrollProgress"></div>
 <div class="grain"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <header class="site-header" id="siteHeader">
-  <div class="wrap header-inner">
-    <a href="index.html#top" class="brand">
+  <div class="wrap-wide header-inner">
+    <a href="index.html" class="brand">
       <img src="assets/img/logo-mark.png" alt="Looped" class="brand-mark">
       <span class="brand-word">LOOPED</span>
     </a>
     <nav class="main-nav" id="mainNav">
-      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#ecosistema">Servicios</a>
+      <a href="index.html#openair">Open Air</a>
       <a href="index.html#artistas">Artistas</a>
-      <a href="index.html#proyectos">Proyectos</a>
       <a href="nosotros.html">Nosotros</a>
-      <a href="index.html#contacto" class="nav-cta">Hablemos</a>
+      <a href="contacto.html" class="nav-cta"><span>Cuéntanos tu idea</span><span class="arrow">→</span></a>
     </nav>
-    <button class="burger" id="burger" aria-label="Abrir menú">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<main id="top">
+<main>
 
-  <!-- SUB-HERO -->
-  <section class="section subhero">
+  <!-- ==================== SUBHERO ==================== -->
+  <section class="subhero subhero--photo">
+    <div class="subhero-bg"><img src="assets/img/hero/hero-5.jpg" alt="" aria-hidden="true"></div>
     <div class="wrap">
-      <a href="index.html#top" class="subhero-back reveal">← Volver a Looped</a>
-      <p class="eyebrow reveal">Looped · Equipo</p>
-      <h1 class="hero-title reveal" style="max-width:20ch;">Las personas detrás de Looped.</h1>
-      <p class="hero-sub reveal">Un equipo pequeño y multidisciplinar, con formación real en producción y sonido, y años de experiencia en el sector, detrás de cada proyecto que sale de Looped.</p>
+      <a href="index.html" class="subhero-back">← Volver al inicio</a>
+      <p class="section-label">Nosotros</p>
+      <h1 class="hero-title">Somos cinco<br>y hacemos <em>ruido</em>.</h1>
+      <p class="hero-sub">Looped no es una agencia con departamentos que no se hablan. Somos un grupo pequeño de gente del sector que produce, mezcla, monta, diseña y programa. Cuando contratas una división, te llevas al equipo entero.</p>
     </div>
   </section>
 
-  <!-- TEAM GRID -->
-  <section class="section" style="padding-top:80px;">
+  <!-- ==================== MANIFIESTO ==================== -->
+  <section class="section">
     <div class="wrap">
-      <p class="section-label reveal">El equipo · 5 personas</p>
-      <h2 class="section-title reveal">Toca una tarjeta para saber más.</h2>
+      <div class="manifesto-grid">
+        <p class="section-label reveal">Por qué hacemos esto</p>
+        <h2 class="manifesto-text reveal reveal-1">
+          Empezamos montando sesiones al aire libre porque nos apetecía, no porque hubiera un cliente.
+          Esa forma de trabajar se nos quedó. Hoy producimos <strong>eventos</strong>, grabamos y mezclamos
+          <strong>sonido</strong>, movemos artistas y desarrollamos <strong>software</strong>, con la misma
+          idea de fondo, hacer las cosas <em>bien</em> aunque cueste más.
+        </h2>
+        <p class="manifesto-credential reveal reveal-2">
+          Más de <strong>tres años</strong> con el sello en marcha y más de <strong>cinco</strong>
+          montando eventos, con estudios de <strong>Máster</strong> en Producción y Sonido detrás.
+          No aprendemos con tu proyecto, lo aprendimos antes.
+        </p>
+      </div>
 
-      <div class="team-grid">
-
-        <article class="team-card reveal" data-flip>
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <img src="assets/img/fundadores/darkyo.jpg" alt="Jorge Aguilera, fundador de Looped" loading="lazy">
-              <span class="team-card-hint">Toca para saber más ↺</span>
-              <div class="team-card-overlay">
-                <p class="team-card-role">Fundador</p>
-                <h3>Jorge Aguilera</h3>
-              </div>
-            </div>
-            <div class="team-card-face team-card-back">
-              <p class="team-card-role">Fundador</p>
-              <h3>Jorge Aguilera</h3>
-              <p class="team-card-bio">Cofundador de Looped desde sus inicios. Formación en producción y sonido, con estudios de máster y experiencia activa en el sector. Su proyecto artístico es Darkyo, DJ y productor.</p>
-              <div class="team-card-tags">
-                <span>Fundador</span><span>Producción</span><span>Darkyo</span>
-              </div>
-              <div class="team-card-links">
-                <a href="soundworks-artistas.html">Ver proyecto artístico ↗</a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="team-card reveal" data-flip>
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <img src="assets/img/fundadores/wearemadboys.jpg" alt="Álvaro Félix, fundador de Looped" loading="lazy">
-              <span class="team-card-hint">Toca para saber más ↺</span>
-              <div class="team-card-overlay">
-                <p class="team-card-role">Fundador</p>
-                <h3>Álvaro Félix</h3>
-              </div>
-            </div>
-            <div class="team-card-face team-card-back">
-              <p class="team-card-role">Fundador</p>
-              <h3>Álvaro Félix</h3>
-              <p class="team-card-bio">Cofundador de Looped, junto a Jorge. Formación en producción y sonido, con estudios de máster y experiencia activa en el sector. Su proyecto artístico es We Are MadBoys, fichados por Spinnin' Records.</p>
-              <div class="team-card-tags">
-                <span>Fundador</span><span>Producción</span><span>MadBoys</span>
-              </div>
-              <div class="team-card-links">
-                <a href="soundworks-artistas.html">Ver proyecto artístico ↗</a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="team-card team-card--pending reveal">
-          <div class="team-card-inner">
-            <span class="pending-mark">+3</span>
-            <p>El resto del equipo Looped se suma aquí en cuanto tengamos sus fotos y bios.</p>
-          </div>
-        </article>
-
+      <div class="stats-row">
+        <div class="stat reveal">
+          <span class="stat-number" data-count="5">0</span>
+          <p>personas en el equipo</p>
+        </div>
+        <div class="stat reveal reveal-1">
+          <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+          <p>años con el sello en marcha</p>
+        </div>
+        <div class="stat reveal reveal-2">
+          <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+          <p>años produciendo eventos</p>
+        </div>
+        <div class="stat reveal reveal-3">
+          <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+          <p>ediciones de Open Air Series</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="padding-top:0;">
-    <div class="wrap division-content">
-      <div class="division-cross reveal">
-        <p><strong>¿Tienes un proyecto en mente?</strong> Cuéntanos qué necesitas y te respondemos en menos de 48h.</p>
-        <a href="index.html#contacto" class="btn btn-primary"><span>Hablemos</span></a>
+  <!-- ==================== EQUIPO ==================== -->
+  <section class="section" id="equipo" style="background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-label reveal">El equipo</p>
+          <h2 class="section-title reveal reveal-1">Las caras<br>detrás de <em>Looped</em>.</h2>
+        </div>
+        <p class="section-intro reveal reveal-2">Toca cualquier tarjeta para ver qué hace cada uno dentro del sello.</p>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- Jorge -->
+        <button type="button" class="team-card reveal" data-flip aria-label="Ver más sobre Jorge Aguilera">
+          <div class="team-card-inner">
+            <div class="team-card-face team-card-front">
+              <img src="assets/img/fundadores/darkyo.jpg" alt="Jorge Aguilera, fundador de Looped">
+              <div class="team-card-overlay">
+                <p class="team-card-role">Fundador</p>
+                <h3>Jorge Aguilera</h3>
+              </div>
+              <span class="team-card-hint">Ver ficha ↻</span>
+            </div>
+            <div class="team-card-face team-card-back">
+              <p class="team-card-role">Fundador</p>
+              <h3>Jorge Aguilera</h3>
+              <p class="team-card-bio">Puso Looped en marcha y hoy lleva la dirección de los proyectos, la producción y la mezcla. Es quien cierra los presupuestos y quien está en cabina cuando toca. Como artista firma <strong>Darkyo</strong>.</p>
+              <div class="team-card-tags"><span>Dirección</span><span>Producción</span><span>Mezcla</span></div>
+              <div class="team-card-links">
+                <a href="https://www.instagram.com/yoryitoo_" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="soundworks-artistas.html">Perfil de artista ↗</a>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <!-- Álvaro -->
+        <button type="button" class="team-card reveal reveal-1" data-flip aria-label="Ver más sobre Álvaro Félix">
+          <div class="team-card-inner">
+            <div class="team-card-face team-card-front">
+              <img src="assets/img/fundadores/wearemadboys.jpg" alt="Álvaro Félix, co-fundador de Looped">
+              <div class="team-card-overlay">
+                <p class="team-card-role">Co-fundador</p>
+                <h3>Álvaro Félix</h3>
+              </div>
+              <span class="team-card-hint">Ver ficha ↻</span>
+            </div>
+            <div class="team-card-face team-card-back">
+              <p class="team-card-role">Co-fundador</p>
+              <h3>Álvaro Félix</h3>
+              <p class="team-card-bio">Co-fundador del sello y motor de los eventos en directo. Es la mitad de <strong>We Are MadBoys</strong>, el proyecto que hoy pone la música en cada edición de Open Air Series.</p>
+              <div class="team-card-tags"><span>Eventos</span><span>Directo</span><span>Booking</span></div>
+              <div class="team-card-links">
+                <a href="https://www.instagram.com/alvaro.felix/" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="soundworks-artistas.html">Perfil de artista ↗</a>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <!-- David -->
+        <button type="button" class="team-card reveal reveal-2" data-flip aria-label="Ver más sobre David Peromingo">
+          <div class="team-card-inner">
+            <div class="team-card-face team-card-front">
+              <img src="assets/img/equipo/david.jpg" alt="David Peromingo, equipo técnico de Looped">
+              <div class="team-card-overlay">
+                <p class="team-card-role">Equipo técnico</p>
+                <h3>David Peromingo</h3>
+              </div>
+              <span class="team-card-hint">Ver ficha ↻</span>
+            </div>
+            <div class="team-card-face team-card-back">
+              <p class="team-card-role">Motion graphics y VFX</p>
+              <h3>David Peromingo</h3>
+              <p class="team-card-bio">Se encarga del apartado técnico y de todo lo que se mueve en pantalla. Motion graphics, efectos visuales y post-producción de vídeo, desde los grafismos de un directo hasta el acabado final de una pieza.</p>
+              <div class="team-card-tags"><span>Motion graphics</span><span>VFX</span><span>Post-producción</span></div>
+              <div class="team-card-links">
+                <a href="contacto.html">Encargo audiovisual ↗</a>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <!-- Marta -->
+        <button type="button" class="team-card reveal reveal-3" data-flip aria-label="Ver más sobre Marta Pérez">
+          <div class="team-card-inner">
+            <div class="team-card-face team-card-front">
+              <img src="assets/img/equipo/marta.jpg" alt="Marta Pérez, imagen de redes y relaciones públicas de Looped">
+              <div class="team-card-overlay">
+                <p class="team-card-role">Imagen y RR. PP.</p>
+                <h3>Marta Pérez</h3>
+              </div>
+              <span class="team-card-hint">Ver ficha ↻</span>
+            </div>
+            <div class="team-card-face team-card-back">
+              <p class="team-card-role">Imagen de redes y relaciones públicas</p>
+              <h3>Marta Pérez</h3>
+              <p class="team-card-bio">Cuida cómo se ve Looped hacia fuera y mantiene la relación con salas, promotoras, marcas y colaboradores. Si un evento nuestro llega a más gente de la que cabía en el sitio, suele ser cosa suya.</p>
+              <div class="team-card-tags"><span>Relaciones públicas</span><span>Imagen de marca</span><span>Comunicación</span></div>
+              <div class="team-card-links">
+                <a href="contacto.html">Colaborar con Looped ↗</a>
+              </div>
+            </div>
+          </div>
+        </button>
+
+        <!-- Ana -->
+        <button type="button" class="team-card reveal reveal-4" data-flip aria-label="Ver más sobre Ana Orden">
+          <div class="team-card-inner">
+            <div class="team-card-face team-card-front">
+              <img src="assets/img/equipo/ana.jpg" alt="Ana Orden, redes sociales y diseño gráfico de Looped">
+              <div class="team-card-overlay">
+                <p class="team-card-role">Redes y diseño</p>
+                <h3>Ana Orden</h3>
+              </div>
+              <span class="team-card-hint">Ver ficha ↻</span>
+            </div>
+            <div class="team-card-face team-card-back">
+              <p class="team-card-role">Redes sociales y diseño gráfico</p>
+              <h3>Ana Orden</h3>
+              <p class="team-card-bio">Lleva las redes sociales y el diseño gráfico del sello. Los carteles de cada Open Air, las piezas de cada lanzamiento y el día a día de las cuentas pasan por sus manos.</p>
+              <div class="team-card-tags"><span>Diseño gráfico</span><span>Redes sociales</span><span>Contenido</span></div>
+              <div class="team-card-links">
+                <a href="contacto.html">Hablar de diseño ↗</a>
+              </div>
+            </div>
+          </div>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== POR QUÉ NOSOTROS ==================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-label reveal">Por qué Looped</p>
+          <h2 class="section-title reveal reveal-1">Lo que nos hace <em>distintos</em>.</h2>
+        </div>
+        <p class="section-intro reveal reveal-2">Ni somos los más grandes ni queremos serlo. Estas son las tres razones por las que la gente repite con nosotros.</p>
+      </div>
+
+      <div class="cred-grid">
+        <article class="cred reveal">
+          <span class="mono">01</span>
+          <h3>Todo bajo el mismo techo</h3>
+          <p>Booking, producción de evento, sonido, vídeo, diseño y desarrollo. No hay que coordinar cinco proveedores ni explicar el proyecto cinco veces.</p>
+        </article>
+        <article class="cred reveal reveal-1">
+          <span class="mono">02</span>
+          <h3>Formación real detrás</h3>
+          <p>Estudios de producción y sonido, máster y años trabajando en el sector. Tu proyecto no es nuestra práctica, es nuestro oficio.</p>
+        </article>
+        <article class="cred reveal reveal-2">
+          <span class="mono">03</span>
+          <h3>Proyectos propios</h3>
+          <p>Open Air Series lo montamos nosotros, con nuestro dinero y nuestro equipo. Sabemos lo que cuesta un evento porque lo pagamos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ECOSISTEMA EN CORTO ==================== -->
+  <section class="section section-tight" style="background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="section-label reveal">Nuestras divisiones</p>
+      <h2 class="section-title reveal reveal-1" style="margin-bottom:44px;">Elige por dónde <em>entrar</em>.</h2>
+      <div class="services-grid services-grid--six">
+        <a href="agency.html" class="service-card reveal" data-media="assets/img/proyectos/kinetik.jpg">
+          <div class="service-head"><span class="service-index">01 / Agency</span><h3>Agency<small>Booking y representación</small></h3></div>
+          <p>Llevamos a nuestro roster a salas, festivales y promotoras, dentro y fuera de España.</p>
+          <div class="service-foot"><span class="service-tag">Artistas</span><span class="service-more">Saber más ↗</span></div>
+        </a>
+        <a href="studios.html" class="service-card reveal reveal-1" data-media="assets/img/proyectos/pulse.jpg">
+          <div class="service-head"><span class="service-index">02 / Studios</span><h3>Studios<small>Eventos y sonido</small></h3></div>
+          <p>Producción de eventos, grabación, mezcla y composición, todo con equipo propio.</p>
+          <div class="service-foot"><span class="service-tag">Producción</span><span class="service-more">Saber más ↗</span></div>
+        </a>
+        <a href="soundworks.html" class="service-card reveal reveal-2" data-media="assets/img/paisajes/sierra.jpg">
+          <div class="service-head"><span class="service-index">03 / Soundworks</span><h3>Soundworks<small>Librerías propias</small></h3></div>
+          <p>Librerías de audio real y productos sonoros grabados por nosotros, listos para usar.</p>
+          <div class="service-foot"><span class="service-tag">Producto</span><span class="service-more">Saber más ↗</span></div>
+        </a>
+        <a href="labs.html" class="service-card reveal reveal-3" data-media="assets/img/paisajes/mirador.jpg">
+          <div class="service-head"><span class="service-index">04 / Labs</span><h3>Labs<small>Webs y software</small></h3></div>
+          <p>Webs a medida, software de gestión, automatización y nuestros propios proyectos digitales.</p>
+          <div class="service-foot"><span class="service-tag">Desarrollo</span><span class="service-more">Saber más ↗</span></div>
+        </a>
+        <a href="academy.html" class="service-card reveal reveal-4" data-media="assets/img/paisajes/skyline.jpg">
+          <div class="service-head"><span class="service-index">05 / Academy</span><h3>Academy<small>Formación</small></h3></div>
+          <p>Tutoriales, procesos reales y apuntes de sonido y producción, gratuitos y de pago.</p>
+          <div class="service-foot"><span class="service-tag">Aprender</span><span class="service-more">Saber más ↗</span></div>
+        </a>
+        <a href="contacto.html" class="service-card service-card--cta reveal reveal-5">
+          <div class="service-head"><span class="service-index">¿Y si son varias?</span><h3>No lo tengo claro<small>Te ayudamos a decidir</small></h3></div>
+          <p>Cuéntanos qué quieres conseguir y nosotros te decimos qué divisiones hacen falta y cuánto cuesta.</p>
+          <div class="service-foot"><span class="service-tag">Sin compromiso</span><span class="service-more">Escríbenos ↗</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-band">
+    <div class="cta-band-bg"><img src="assets/img/hero/hero-4.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+    <div class="wrap">
+      <h2 class="reveal">Trabajemos<br><em>juntos</em>.</h2>
+      <p class="reveal reveal-1">Escríbenos con dos líneas sobre lo que tienes en mente y te respondemos en menos de 48 horas.</p>
+      <div class="hero-actions reveal reveal-2">
+        <a href="contacto.html" class="btn btn-primary"><span>Cuéntanos tu idea</span><span class="arrow">→</span></a>
+        <a href="mailto:loopedagency@jorgeaguileravillegas.com" class="btn btn-ghost"><span>Escribir un email</span></a>
       </div>
     </div>
   </section>
@@ -129,7 +314,7 @@
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <img src="assets/img/logo-blanco.png" alt="Looped">
-      <p>Productora independiente en Madrid.</p>
+      <p>Productora independiente en Madrid. Booking, producción, sonido, desarrollo y formación bajo un mismo sello.</p>
     </div>
     <div class="footer-cols">
       <div>
@@ -143,18 +328,22 @@
       <div>
         <h4>Looped</h4>
         <a href="nosotros.html">Nosotros</a>
+        <a href="index.html#openair">Open Air Series</a>
         <a href="index.html#artistas">Artistas</a>
-        <a href="index.html#proyectos">Proyectos</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="index.html#proyectos">Trabajo</a>
       </div>
       <div>
-        <h4>Social</h4>
+        <h4>Contacto</h4>
+        <a href="contacto.html">Formulario</a>
         <a href="mailto:loopedagency@jorgeaguileravillegas.com">Email</a>
+        <a href="tel:+34717778433">+34 71 777 84 33</a>
       </div>
     </div>
   </div>
-  <div class="wrap footer-bottom">
+  <div class="footer-wordmark" aria-hidden="true"><p>LOOPED</p></div>
+  <div class="footer-bottom">
     <p>© <span id="year"></span> Looped Agency. Todos los derechos reservados.</p>
+    <p>Madrid, España</p>
   </div>
 </footer>
 

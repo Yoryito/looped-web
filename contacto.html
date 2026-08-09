@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | Looped</title>
+<meta name="description" content="Cuéntanos tu idea. Booking, eventos, producción audiovisual y de sonido, librerías, desarrollo a medida y formación. Respondemos en menos de 48 horas.">
+<meta name="theme-color" content="#080807">
+<link rel="icon" href="assets/img/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap-wide header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-mark.png" alt="Looped" class="brand-mark">
+      <span class="brand-word">LOOPED</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html#ecosistema">Servicios</a>
+      <a href="index.html#openair">Open Air</a>
+      <a href="index.html#artistas">Artistas</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html" class="nav-cta"><span>Cuéntanos tu idea</span><span class="arrow">→</span></a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ==================== SUBHERO ==================== -->
+  <section class="subhero subhero--photo">
+    <div class="subhero-bg"><img src="assets/img/hero/hero-3.jpg" alt="" aria-hidden="true"></div>
+    <div class="wrap">
+      <a href="index.html" class="subhero-back">← Volver al inicio</a>
+      <p class="section-label">Contacto</p>
+      <h1 class="hero-title">Cuéntanos<br>tu <em>idea</em>.</h1>
+      <p class="hero-sub">Un evento, un artista, un disco, una web o una clase. Rellena el formulario con lo que tengas, aunque sea poco, y te respondemos en menos de 48 horas con una propuesta clara y un precio orientativo.</p>
+    </div>
+  </section>
+
+  <!-- ==================== FORMULARIO ==================== -->
+  <section class="section">
+    <div class="wrap contact-inner">
+
+      <div class="contact-copy reveal">
+        <p class="section-label">Directo</p>
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:22px;">Sin intermediarios.</h2>
+        <p>Detrás de este formulario estamos nosotros, no un call center. Cuanto más concreto seas con fecha, sitio y presupuesto, mejor te podemos responder a la primera.</p>
+
+        <ul class="contact-list">
+          <li><a href="mailto:loopedagency@jorgeaguileravillegas.com"><span>loopedagency@jorgeaguileravillegas.com</span><span class="mono">Email</span></a></li>
+          <li><a href="tel:+34717778433"><span>+34 71 777 84 33</span><span class="mono">Teléfono</span></a></li>
+          <li><span class="contact-static"><span>Madrid, España</span><span class="mono">Base</span></span></li>
+          <li><span class="contact-static"><span>Trabajamos en toda España</span><span class="mono">Cobertura</span></span></li>
+        </ul>
+
+        <div class="contact-badges">
+          <span class="badge"><span class="dot">●</span> Respuesta en 48 h</span>
+          <span class="badge">Presupuesto sin compromiso</span>
+          <span class="badge">Primera reunión gratuita</span>
+        </div>
+
+        <div class="cred-grid" style="grid-template-columns:1fr;margin-top:44px;gap:14px;">
+          <article class="cred" style="padding:22px 24px;gap:8px;">
+            <span class="mono">Qué pasa después</span>
+            <p style="margin:0;">Leemos tu mensaje, te escribimos con dudas si hacen falta y te mandamos una propuesta por escrito con plan de producción y precio cerrado. Sin compromiso y sin letra pequeña.</p>
+          </article>
+        </div>
+      </div>
+
+      <form class="contact-form reveal reveal-1" id="contactForm" novalidate>
+
+        <div class="form-row">
+          <div class="field">
+            <input type="text" name="nombre" id="f-nombre" required placeholder=" " autocomplete="name">
+            <label for="f-nombre">Nombre y apellidos</label>
+          </div>
+          <div class="field">
+            <input type="email" name="email" id="f-email" required placeholder=" " autocomplete="email">
+            <label for="f-email">Email</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <input type="tel" name="telefono" id="f-telefono" placeholder=" " autocomplete="tel">
+            <label for="f-telefono">Teléfono (opcional)</label>
+          </div>
+          <div class="field">
+            <input type="text" name="empresa" id="f-empresa" placeholder=" " autocomplete="organization">
+            <label for="f-empresa">Marca o proyecto</label>
+          </div>
+        </div>
+
+        <div>
+          <span class="field-static-label">¿Qué necesitas? Marca todo lo que aplique</span>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="division" value="Agency"><span>Booking de artista</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Studios · evento"><span>Evento o festival</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Studios · audiovisual"><span>Audiovisual</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Studios · sonido"><span>Sonido y mezcla</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Soundworks"><span>Soundworks</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Labs"><span>Web o software</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Academy"><span>Academy</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="Open Air Series"><span>Pinchar en Open Air</span></label>
+            <label class="chip"><input type="checkbox" name="division" value="No lo sé"><span>Todavía no lo sé</span></label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <select name="presupuesto" id="f-presupuesto">
+              <option value="" disabled selected hidden></option>
+              <option>Menos de 1.000 €</option>
+              <option>1.000 a 3.000 €</option>
+              <option>3.000 a 8.000 €</option>
+              <option>Más de 8.000 €</option>
+              <option>Todavía no lo sé</option>
+            </select>
+            <label for="f-presupuesto" class="label-select">Presupuesto</label>
+          </div>
+          <div class="field">
+            <input type="date" name="fecha" id="f-fecha" placeholder=" ">
+            <label for="f-fecha">Fecha objetivo</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <textarea name="mensaje" id="f-mensaje" required placeholder=" " rows="5" maxlength="600"></textarea>
+          <label for="f-mensaje">Cuéntanos la idea</label>
+          <span class="char-count" id="charCount">0 / 600</span>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" name="privacidad" id="f-privacidad" required>
+          <span class="box"></span>
+          <small>He leído y acepto que Looped use estos datos únicamente para responder a esta consulta.</small>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-full"><span>Enviar mensaje</span><span class="arrow">→</span></button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form-note">Formulario de demostración, pendiente de conectar a un servicio de envío antes de publicar.</p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="section section-tight" style="background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="section-label reveal">Dudas frecuentes</p>
+      <h2 class="section-title reveal reveal-1" style="margin-bottom:44px;">Antes de <em>escribir</em>.</h2>
+
+      <div class="faq reveal reveal-2">
+        <div class="faq-item">
+          <button class="faq-q" type="button">¿Cuánto cuesta un proyecto con Looped?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Depende del alcance, del equipo necesario y de los días de trabajo. Por eso preguntamos el presupuesto orientativo, para proponerte algo realista desde el principio en vez de mandarte una cifra al aire. La primera reunión y el presupuesto no se cobran.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">¿Trabajáis fuera de Madrid?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Sí. La base está en Madrid, pero hemos montado eventos propios en Cáceres, Córdoba y Cantabria, y en booking movemos artistas a nivel internacional. Si el proyecto está fuera, lo hablamos y ajustamos desplazamiento en el presupuesto.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Soy DJ y quiero pinchar en un Open Air. ¿Cómo va?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Marca la casilla de Open Air Series en el formulario y cuéntanos tu estilo, con un enlace a una sesión o a tu perfil. Estamos abriendo el proyecto a más colaboradores, así que nos interesa escucharte.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">¿Podéis encargaros solo de una parte?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Claro. Puedes contratar solo el sonido, solo el vídeo, solo la cabina o solo la web. Lo que ofrecemos es la opción de tenerlo todo con un mismo interlocutor, no la obligación.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">¿Qué plazos manejáis?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Respondemos en menos de 48 horas y la propuesta suele estar lista en uno a tres días. La producción depende del proyecto, y la entrega incluye siempre dos rondas de revisión.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">¿Representáis artistas nuevos?<span class="faq-icon"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Sí, valoramos incorporaciones al roster. Escríbenos con tu biografía, fotos, logo y enlaces a tu música. Si encaja, te mandamos el acuerdo de representación con nuestras condiciones para revisarlo con calma.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-band">
+    <div class="cta-band-bg"><img src="assets/img/hero/hero-1.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+    <div class="wrap">
+      <h2 class="reveal">¿Prefieres<br>escribir <em>directo</em>?</h2>
+      <p class="reveal reveal-1">También puedes mandarnos un email o llamarnos. Contestamos nosotros mismos.</p>
+      <div class="hero-actions reveal reveal-2">
+        <a href="mailto:loopedagency@jorgeaguileravillegas.com" class="btn btn-primary"><span>Escribir un email</span><span class="arrow">→</span></a>
+        <a href="tel:+34717778433" class="btn btn-ghost"><span>+34 71 777 84 33</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="assets/img/logo-blanco.png" alt="Looped">
+      <p>Productora independiente en Madrid. Booking, producción, sonido, desarrollo y formación bajo un mismo sello.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Divisiones</h4>
+        <a href="agency.html">Looped Agency</a>
+        <a href="studios.html">Looped Studios</a>
+        <a href="soundworks.html">Looped Soundworks</a>
+        <a href="labs.html">Looped Labs</a>
+        <a href="academy.html">Looped Academy</a>
+      </div>
+      <div>
+        <h4>Looped</h4>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="index.html#openair">Open Air Series</a>
+        <a href="index.html#artistas">Artistas</a>
+        <a href="index.html#proyectos">Trabajo</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="contacto.html">Formulario</a>
+        <a href="mailto:loopedagency@jorgeaguileravillegas.com">Email</a>
+        <a href="tel:+34717778433">+34 71 777 84 33</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wordmark" aria-hidden="true"><p>LOOPED</p></div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Looped Agency. Todos los derechos reservados.</p>
+    <p>Madrid, España</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
