@@ -177,6 +177,21 @@ document.querySelectorAll('.field select').forEach(nativeSelect=>{
   });
 });
 
+// ============ team flip cards ============
+document.querySelectorAll('.team-card[data-flip]').forEach(card=>{
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-pressed', 'false');
+  const toggle = ()=>{
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+  };
+  card.addEventListener('click', toggle);
+  card.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+  });
+});
+
 // ============ contact form (demo submit) ============
 const form = document.getElementById('contactForm');
 if(form){
