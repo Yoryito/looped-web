@@ -62,14 +62,16 @@ if(window.matchMedia('(pointer:fine)').matches){
 
 // ============ contact form (demo submit) ============
 const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  const btn = form.querySelector('button[type="submit"] span');
-  const original = btn.textContent;
-  btn.textContent = 'Enviado ✓ (demo)';
-  form.querySelector('button').style.opacity = '.6';
-  setTimeout(()=>{ btn.textContent = original; form.querySelector('button').style.opacity = '1'; }, 2200);
-});
+if(form){
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"] span');
+    const original = btn.textContent;
+    btn.textContent = 'Enviado ✓ (demo)';
+    form.querySelector('button').style.opacity = '.6';
+    setTimeout(()=>{ btn.textContent = original; form.querySelector('button').style.opacity = '1'; }, 2200);
+  });
+}
 
 // ============ footer year ============
 document.getElementById('year').textContent = new Date().getFullYear();
