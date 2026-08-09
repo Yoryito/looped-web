@@ -402,7 +402,7 @@ ul{ list-style:none; margin:0; padding:0; }
 /* ============ responsive ============ */
 @media (max-width:960px){
   .services-grid{ grid-template-columns:repeat(2,1fr); }
-  .projects-inner, .contact-inner{ grid-template-columns:1fr; gap:44px; }
+  .projects-grid, .contact-inner{ grid-template-columns:1fr; gap:44px; }
   .stats-row{ grid-template-columns:repeat(2,1fr); row-gap:36px; }
 }
 @media (max-width:720px){
@@ -419,6 +419,7 @@ ul{ list-style:none; margin:0; padding:0; }
   .burger.open span:nth-child(2){ opacity:0; }
   .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
   .services-grid{ grid-template-columns:1fr; }
+  .service-card--wide{ grid-column:span 1; }
   .hero-content{ padding-top:140px; padding-bottom:90px; }
   .scroll-cue{ display:none; }
   .cursor-glow{ display:none; }
