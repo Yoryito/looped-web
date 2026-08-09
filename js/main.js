@@ -607,7 +607,17 @@ $$('.team-card[data-flip]').forEach(card=>{
         status.textContent = 'Falta algún campo obligatorio, revísalo y volvemos a intentarlo.';
         status.className = 'form-status err';
       }
-      if(bad && bad.focus) bad.focus();
+      // el select y la casilla reales son invisibles (los sustituyen el botón del
+      // listbox y el cuadrado dibujado), así que enfocamos lo que sí se ve
+      let target = bad;
+      if(bad && bad.classList.contains('select-native')){
+        target = bad.closest('.select-shell')?.querySelector('.select-trigger') || bad;
+      } else if(bad && bad.type === 'checkbox'){
+        target = bad.closest('label') || bad;
+        if(target !== bad && !target.hasAttribute('tabindex')) target.tabIndex = -1;
+      }
+      if(target && target.focus) target.focus();
+      if(target && target.scrollIntoView) target.scrollIntoView({ block:'center', behavior:REDUCED ? 'auto' : 'smooth' });
       return;
     }
 

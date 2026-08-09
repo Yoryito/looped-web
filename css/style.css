@@ -736,6 +736,7 @@ button{ font:inherit; }
   display:grid; place-items:center; transition:border-color .2s var(--ease), background .2s var(--ease);
 }
 .check .box::after{ content:''; width:9px; height:5px; border-left:2px solid var(--accent-contrast); border-bottom:2px solid var(--accent-contrast); transform:rotate(-45deg) scale(0); transition:transform .2s var(--ease); margin-top:-2px; }
+.check input:focus-visible + .box{ outline:2px solid var(--accent); outline-offset:3px; }
 .check input:checked + .box{ background:var(--accent); border-color:var(--accent); }
 .check input:checked + .box::after{ transform:rotate(-45deg) scale(1); }
 .check small{ font-size:12.5px; color:var(--fg-dim); line-height:1.5; }
@@ -818,12 +819,13 @@ button{ font:inherit; }
 .subhero .hero-title{ font-size:clamp(2.2rem,6.6vw,5.6rem); margin-bottom:22px; }
 .subhero p.hero-sub{ margin-bottom:0; }
 
-.division-content{ max-width:880px; margin-inline:0; }
+/* el contenido comparte el mismo raíl que la cabecera y el subhero, la medida
+   de lectura se controla dentro (no moviendo el contenedor a la izquierda) */
 .division-content p{ color:var(--fg-dim); font-size:16.5px; line-height:1.75; margin:0 0 24px; max-width:64ch; }
 .division-content p strong{ color:var(--fg); font-weight:600; }
 .division-list{
   display:grid; grid-template-columns:1fr 1fr; gap:16px 44px; margin:44px 0 46px;
-  padding-top:38px; border-top:1px solid var(--line);
+  padding-top:38px; border-top:1px solid var(--line); max-width:880px;
 }
 .division-list li{ color:var(--fg-dim); font-size:14.5px; padding-left:20px; position:relative; }
 .division-list li::before{ content:''; position:absolute; left:0; top:9px; width:8px; height:1px; background:var(--accent); }
@@ -831,6 +833,7 @@ button{ font:inherit; }
 .division-cross{
   margin-top:64px; padding:30px 32px; background:var(--bg-card); border:1px solid var(--line);
   border-radius:var(--radius); display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+  max-width:880px;
 }
 .division-cross p{ margin:0; color:var(--fg-dim); font-size:14.5px; max-width:44ch; }
 .division-cross p strong{ color:var(--fg); }
