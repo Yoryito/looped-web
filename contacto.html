@@ -80,7 +80,10 @@
         </div>
       </div>
 
-      <form class="contact-form reveal reveal-1" id="contactForm" novalidate>
+      <form class="contact-form reveal reveal-1" id="contactForm" novalidate action="https://formspree.io/f/xwlelgej" method="POST">
+
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde looped-web">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
 
         <div class="form-row">
           <div class="field">
@@ -151,7 +154,6 @@
 
         <button type="submit" class="btn btn-primary btn-full"><span>Enviar mensaje</span><span class="arrow">→</span></button>
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-        <p class="form-note">Formulario de demostración, pendiente de conectar a un servicio de envío antes de publicar.</p>
       </form>
 
     </div>

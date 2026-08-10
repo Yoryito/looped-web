@@ -590,7 +590,7 @@ $$('.team-card[data-flip]').forEach(card=>{
   update();
 })();
 
-/* ============ formulario (maqueta) ============ */
+/* ============ formulario ============ */
 (function contactForm(){
   const form = $('#contactForm');
   if(!form) return;
@@ -626,14 +626,34 @@ $$('.team-card[data-flip]').forEach(card=>{
     label.textContent = 'Enviando…';
     btn.disabled = true;
 
-    setTimeout(()=>{
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(res=>{
+      label.textContent = original;
+      btn.disabled = false;
+      if(res.ok){
+        if(status){
+          status.textContent = 'Mensaje enviado, gracias. Te respondemos en menos de 48 horas.';
+          status.className = 'form-status ok';
+        }
+        form.reset();
+        if($('#charCount')) $('#charCount').textContent = '0 / 600';
+      } else {
+        if(status){
+          status.textContent = 'No se ha podido enviar, prueba de nuevo o escríbenos directamente por email.';
+          status.className = 'form-status err';
+        }
+      }
+    }).catch(()=>{
       label.textContent = original;
       btn.disabled = false;
       if(status){
-        status.textContent = 'Mensaje registrado en la maqueta. Todavía no se envía de verdad, escríbenos por email mientras tanto.';
-        status.className = 'form-status ok';
+        status.textContent = 'No se ha podido enviar, prueba de nuevo o escríbenos directamente por email.';
+        status.className = 'form-status err';
       }
-    }, 900);
+    });
   });
 })();
 
